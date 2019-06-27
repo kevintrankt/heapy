@@ -15,23 +15,32 @@
 
     <script>
 
+        let deleteAllCookies = () => {
+            var cookies = document.cookie.split(";");
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+        }
+
         let emailPopup = () => {
             let email = prompt("boy gimme that email", "");
-            console.log(email);
 
             heap.identify(email);
 
             let body = document.getElementsByTagName('body')[0];
-            let para = document.createElement("h1");
-            let node = document.createTextNode(`holy shit it's ${email}!!!`);
-
-            para.appendChild(node);
-            body.appendChild(para);
+            let heading = document.createElement("h1");
+            let node = document.createTextNode(`it's ${email}!!!`);
+            heading.appendChild(node);
+            body.appendChild(heading);
 
         }
 
         let init = () => {
-            emailPopup();
+            deleteAllCookies();
         }
 
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -40,15 +49,18 @@
 
 
 
-
-
-
-
     </script>
 </head>
 
 <body>
 
+    <h3>who tf do u wanna b</h3>
+    <select id="identity-select">
+        <option>anonymous</option>
+        <option>kevin.tran@heap.io</option>
+        <option>kevin.tran.kt@gmail.com</option>
+        <option>kevin@tran.com</option>
+    </select>
 
 
 
