@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- THIS IS JUST TEST STUFF DON'T JUDGE  -->
 <html lang="en">
 
 <head>
@@ -14,6 +15,10 @@
 
 
     <script>
+
+        let init = () => {
+            deleteAllCookies();
+        }
 
         let deleteAllCookies = () => {
             var cookies = document.cookie.split(";");
@@ -36,12 +41,13 @@
             let node = document.createTextNode(`it's ${email}!!!`);
             heading.appendChild(node);
             body.appendChild(heading);
-
         }
 
-        let init = () => {
-            deleteAllCookies();
+        let identify = () => {
+            heap.identify(document.getElementById('identity-select').value);
         }
+
+
 
         document.addEventListener('DOMContentLoaded', (event) => {
             init();
@@ -55,7 +61,7 @@
 <body>
 
     <h3>who tf do u wanna b</h3>
-    <select id="identity-select">
+    <select id="identity-select" onchange="identify()">
         <option>anonymous</option>
         <option>kevin.tran@heap.io</option>
         <option>kevin.tran.kt@gmail.com</option>
