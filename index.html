@@ -21,6 +21,7 @@
     <style>
         div {
             margin-bottom: 20px;
+            position: fixed;
         }
 
         body {
@@ -49,37 +50,31 @@
         }
 
         #identity {
-            position: fixed;
             top: 5px;
             left: 15px;
         }
 
         #status {
-            position: fixed;
             top: 100px;
             right: 14px;
         }
 
         #name {
-            position: fixed;
             top: 500px;
             left: 500px;
         }
 
         #select {
-            position: fixed;
             bottom: 10px;
             right: 800px;
         }
 
         #links {
-            position: fixed;
             left: 800px;
             top: 80px;
         }
 
         #neopets {
-            position: fixed;
             right: 70px;
             bottom: 90px;
         }
@@ -93,9 +88,21 @@
         }
 
         #heading {
-            position: fixed;
             top: 80px;
         }
+
+        #nuke {
+            right: 80px;
+            bottom: 80px;
+        }
+
+        #nuke img {
+            height: 100px;
+            width: 100px;
+
+        }
+
+
 
         /* Animate */
 
@@ -152,8 +159,6 @@
 
         $(document).ready(function () {
             animateDiv($('.a'));
-            animateDiv($('.b'));
-            animateDiv($('.c'));
 
         });
 
@@ -278,6 +283,11 @@
         <a href="#5">5</a>
         <a href="#5">6</a>
 
+    </div>
+
+    <div id="nuke" onclick="init()">
+        <img
+            src="https://thumbs-prod.si-cdn.com/sIkNe_eIDylRJqhqZX7gk2KHtYc=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/dd/44/dd44ce31-4cc3-46c0-9378-0ec0da5a13e0/02_10_2014_romeo_nuke.jpg">
     </div>
 
 
