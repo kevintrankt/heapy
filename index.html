@@ -42,6 +42,7 @@
 
         input {
             font-size: 100px;
+            background: none;
         }
 
         .inp {
@@ -60,7 +61,7 @@
         }
 
         #name {
-            top: 500px;
+            top: 400px;
             left: 500px;
         }
 
@@ -111,17 +112,18 @@
 
 
 
+
+
         /* Animate */
 
         div#container {
-            height: 500px;
-            width: 500px;
+            height: 600px;
+            width: 600px;
         }
 
         div.a {
-            width: 50px;
-            height: 50px;
-            background-color: red;
+            right: 100px;
+            bottom: 200px;
             position: fixed;
             z-index: -1;
 
@@ -203,7 +205,7 @@
 
             var greatest = x > y ? x : y;
 
-            var speedModifier = 0.5;
+            var speedModifier = 0.9;
 
             var speed = Math.ceil(greatest / speedModifier);
 
@@ -279,7 +281,7 @@
     </div>
 
     <div id="nuke" onclick="init()">
-        <img
+        <img id="peng"
             src="https://thumbs-prod.si-cdn.com/sIkNe_eIDylRJqhqZX7gk2KHtYc=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/dd/44/dd44ce31-4cc3-46c0-9378-0ec0da5a13e0/02_10_2014_romeo_nuke.jpg">
     </div>
 
