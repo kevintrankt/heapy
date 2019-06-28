@@ -13,6 +13,12 @@
         heap.load("452923651");
     </script>
 
+    <style>
+        #identity {
+            margin-bottom: 50px;
+        }
+    </style>
+
 
     <script>
 
@@ -60,23 +66,30 @@
 
 <body>
 
-    <h3>who tf do u wanna b</h3>
-    <select id="identity-select" onchange="identify()">
-        <option>anonymous</option>
-        <option>kevin.tran@heap.io</option>
-        <option>kevin.tran.kt@gmail.com</option>
-        <option>kevin@tran.com</option>
-    </select>
+    <div id="identity">
 
-    <form>
-        First name:<br>
-        <input type="text" name="firstname" value="Mickey">
-        <br>
-        Last name:<br>
-        <input type="text" name="lastname" value="Mouse">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <h3>who tf do u wanna b</h3>
+        <select id="identity-select" onchange="identify()">
+            <option>anonymous</option>
+            <option>kevin.tran@heap.io</option>
+            <option>kevin.tran.kt@gmail.com</option>
+            <option>kevin@tran.com</option>
+        </select>
+
+    </div>
+
+    <div id="name">
+
+        <form>
+            First name:<br>
+            <input type="text" name="firstname" value="bruh">
+            <br>
+            Last name:<br>
+            <input type="text" name="lastname" value="cmon">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
 
 
