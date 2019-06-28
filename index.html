@@ -24,8 +24,6 @@
 
         let init = () => {
             deleteAllCookies();
-
-            document.getElementById('heading').innerText = `u suck x${heap.userId}`
         }
 
         let deleteAllCookies = () => {
@@ -59,6 +57,7 @@
 
         let identify = () => {
             heap.identify(document.getElementById('identity-select').value);
+            document.getElementById('heading').innerText = `u suck x${heap.userId}`
         }
 
         let userProp = () => {
