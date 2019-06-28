@@ -15,6 +15,9 @@
         heap.load("452923651");
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
     <style>
         div {
             margin-bottom: 20px;
@@ -93,6 +96,22 @@
             position: fixed;
             top: 80px;
         }
+
+        /* Animate */
+
+        div#container {
+            height: 500px;
+            width: 500px;
+        }
+
+        div.a {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: fixed;
+            z-index: -1;
+
+        }
     </style>
 
 
@@ -102,7 +121,6 @@
             heap.resetIdentity();
             heap.clearEventProperties();
 
-            reloadIframe();
 
         }
 
@@ -123,11 +141,6 @@
             heap.addEventProperties({ 'status': document.getElementById('status-select').value });
         }
 
-        let reloadIframe = () => {
-            let url = document.getElementById('url').value;
-
-            document.getElementById('neopets').src = 'http://' + url;
-        }
 
 
 
@@ -135,12 +148,69 @@
             init();
         })
 
+        //animate
+
+        $(document).ready(function () {
+            animateDiv($('.a'));
+            animateDiv($('.b'));
+            animateDiv($('.c'));
+
+        });
+
+        function makeNewPosition($container) {
+
+            // Get viewport dimensions (remove the dimension of the div)
+            var h = $container.height() - 50;
+            var w = $container.width() - 50;
+
+            var nh = Math.floor(Math.random() * h);
+            var nw = Math.floor(Math.random() * w);
+
+            return [nh, nw];
+
+        }
+
+        function animateDiv($target) {
+            var newq = makeNewPosition($target.parent());
+            var oldq = $target.offset();
+            var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+            $target.animate({
+                top: newq[0],
+                left: newq[1]
+            }, speed, function () {
+                animateDiv($target);
+            });
+
+        };
+
+        function calcSpeed(prev, next) {
+
+            var x = Math.abs(prev[1] - next[1]);
+            var y = Math.abs(prev[0] - next[0]);
+
+            var greatest = x > y ? x : y;
+
+            var speedModifier = 0.1;
+
+            var speed = Math.ceil(greatest / speedModifier);
+
+            return speed;
+
+        }
+
 
 
     </script>
 </head>
 
 <body>
+
+    <div id="container">
+        <div class='a'>
+            <img src="https://media1.tenor.com/images/8b9d7e42ce87fb248bfb4611c0d4bbd1/tenor.gif?itemid=7531862">
+        </div>
+    </div>
 
     <h1 id="heading"></h1>
 
@@ -214,13 +284,6 @@
 
     </div>
 
-    <div id="iframe">
-        <iframe id="neopets" width="1024" height="768" src=""
-            style="-webkit-transform:scale(0.5);-moz-transform-scale(0.5);"></iframe>
-
-        <input type="text" id="url" class="inp" value="neopets.com" onchange="reloadIframe()">
-
-    </div>
 
 
 
