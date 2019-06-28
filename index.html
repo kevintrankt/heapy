@@ -136,12 +136,12 @@
         let init = () => {
             heap.resetIdentity();
             heap.clearEventProperties();
-
-
         }
 
 
         let identify = () => {
+            heap.resetIdentity();
+            heap.clearEventProperties();
             heap.identify(document.getElementById('identity-select').value);
             document.getElementById('heading').innerText = `u suck x${heap.userId}`
         }
