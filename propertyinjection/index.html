@@ -28,13 +28,13 @@
             let eventKey = document.getElementById('event-key').value;
             let eventValue = document.getElementById('event-value').value;
 
-            console.log({ userKey: userValue });
-            console.log({ eventKey: eventValue });
+            console.log({ [userKey]: userValue });
+            console.log({ [eventKey]: eventValue });
 
 
 
-            heap.addUserProperties({ userKey: userValue });
-            heap.addEventProperties({ eventKey: eventValue });
+            heap.addUserProperties({ [userKey]: userValue });
+            heap.addEventProperties({ [eventKey]: eventValue });
 
 
         }
