@@ -59,6 +59,13 @@
             heap.identify(document.getElementById('identity-select').value);
         }
 
+        let userProp = () => {
+            let firstName = document.getElementById('firstname').value;
+            let lastName = document.getElementById('lastname').value;
+
+            heap.addUserProperties({ 'First Name': firstName, 'Last Name': lastName });
+        }
+
 
 
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -80,7 +87,15 @@
             <option>anonymous</option>
             <option>kevin.tran@heap.io</option>
             <option>kevin.tran.kt@gmail.com</option>
-            <option>kevin@tran.com</option>
+            <option>kevin1@tran.com</option>
+            <option>ke2vin@tran.com</option>
+            <option>kevi42n@tran.com</option>
+            <option>kev3in@tran.com</option>
+            <option>ke231vin@tran.com</option>
+            <option>kevi333n@tran.com</option>
+            <option>kev33in@tran.com</option>
+            <option>kev122in@tran.com</option>
+
         </select>
 
     </div>
@@ -94,7 +109,7 @@
             Last name:<br>
             <input type="text" id="lastname" value="cmon">
             <br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" onclick="userProp()">
         </form>
     </div>
 
