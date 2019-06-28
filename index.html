@@ -41,7 +41,6 @@
                 var value = "";
                 document.cookie = name + "=" + value + expires + "; path=/acc/html";
             }
-            window.location = ""; // TO REFRESH THE PAGE
         }
 
         let emailPopup = () => {
@@ -77,6 +76,7 @@
 
         <h3>who tf do u wanna b</h3>
         <select id="identity-select" onchange="identify()">
+            <option disabled selected>---</option>
             <option>anonymous</option>
             <option>kevin.tran@heap.io</option>
             <option>kevin.tran.kt@gmail.com</option>
