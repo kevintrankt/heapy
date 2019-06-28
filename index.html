@@ -69,6 +69,10 @@
             heap.addUserProperties({ 'First Name': firstName, 'Last Name': lastName });
         }
 
+        let status = () => {
+            heap.addEventProperties({ 'status': document.getElementById('status-select').value });
+        }
+
 
 
         document.addEventListener('DOMContentLoaded', (event) => {
@@ -100,9 +104,21 @@
             <option>kevi333n@tran.com</option>
             <option>kev33in@tran.com</option>
             <option>kev122in@tran.com</option>
-
         </select>
 
+    </div>
+
+    <div id="status">
+
+        <h3>how u doing</h3>
+
+        <select id="status-select" onchange="status()">
+            <option disabled selected>---</option>
+            <option>dude im just not having a good time</option>
+            <option>im alright could be better</option>
+            <option>holy FUCK im giggin/option>
+
+        </select>
     </div>
 
     <div id="name">
