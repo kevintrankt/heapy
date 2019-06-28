@@ -19,18 +19,34 @@
             font-size: 30px;
         }
     </style>
+
+    <script>
+        let send = () => {
+            let userKey = document.getElementById('user-key').value;
+            let userValue = document.getElementById('user-value').value;
+
+            let eventKey = document.getElementById('event-key').value;
+            let eventValue = document.getElementById('event-value').value;
+
+
+            heap.addUserProperties({ userKey: userValue });
+            heap.addEventProperties({ eventKey: eventValue });
+
+
+        }
+    </script>
 </head>
 
 <body>
     <h1>user props</h1>
-    key: <input type="text"> <br>
-    value: <input type="text"><br>
+    key: <input type="text" id="user-key"> <br>
+    value: <input type="text" id="user-value"><br>
 
     <h1>event props</h1>
-    key: <input type="text"> <br>
-    value: <input type="text"><br>
+    key: <input type="text" id="event-key"> <br>
+    value: <input type="text" id="event-value"><br>
 
-    <h1>LET'S GOOOOOOOOOOOOOOO</h1>
+    <h1 onclick="send()">LET'S GOOOOOOOOOOOOOOO</h1>
 
 
 </body>
